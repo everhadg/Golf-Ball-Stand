@@ -25,82 +25,73 @@
         android:layout_height="wrap_content" />
 
     <TableLayout
+        android:id="@+id/displayTable"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/clearButton"
         >
 
-        <TableRow>
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Ball 1" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="Ball 2" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:text="Ball 3" />
-        </TableRow>
-
-        <TableRow>
-            <TextView
-                android:id="@+id/ball1Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="---" />
-
-            <TextView
-                android:id="@+id/ball2Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:text="---" />
-
-            <TextView
-                android:id="@+id/ball3Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                android:layout_weight="0"
-                android:text="---" />
-        </TableRow>
-
-        <TableRow>
-            <Button
-                android:text="None"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                />
-            <Button
-                android:text="None"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                android:layout_gravity="center"
-                />
-            <Button
-                android:text="None"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="end"
-                />
-        </TableRow>
-
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:orientation="horizontal">
+            <LinearLayout
+                android:orientation="vertical">
+                <ToggleButton
+                    android:id="@+id/ball1Toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Ball 1" />
+                <TextView
+                    android:id="@+id/ball1Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="---" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical">
+                <ToggleButton
+                    android:id="@+id/ball2Toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/toggleButton"
+                    android:layout_centerHorizontal="true"
+                    android:text="Ball 2" />
+                <TextView
+                    android:id="@+id/ball2Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="1"
+                    android:text="---" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical">
+                <ToggleButton
+                    android:id="@+id/ball3Toggle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/toggleButton"
+                    android:text="Ball 3" />
+                <TextView
+                    android:id="@+id/ball3Label"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="end"
+                    android:layout_weight="0"
+                    android:text="---" />
+            </LinearLayout>
+        </TableRow>
     </TableLayout>
+
+    <TextView
+        android:id="@+id/correctionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="Correction"
+        android:layout_below="@+id/displayTable" />
+
+
 
 </RelativeLayout>
