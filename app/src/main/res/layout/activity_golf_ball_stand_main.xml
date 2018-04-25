@@ -22,7 +22,8 @@
         android:text="Perform ball test"
         android:layout_alignParentRight="true"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="performBallTest"/>
 
     <TableLayout
         android:id="@+id/displayTable"
@@ -32,14 +33,17 @@
         >
 
         <TableRow
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:gravity="left">
             <LinearLayout
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1">
                 <ToggleButton
                     android:id="@+id/ball1Toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Ball 1" />
+                    android:textOff="Ball 1"
+                    android:textOn="Ball 1"/>
                 <TextView
                     android:id="@+id/ball1Label"
                     android:layout_width="match_parent"
@@ -49,14 +53,16 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1">
                 <ToggleButton
                     android:id="@+id/ball2Toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/toggleButton"
                     android:layout_centerHorizontal="true"
-                    android:text="Ball 2" />
+                    android:textOff="Ball 2"
+                    android:textOn="Ball 2"/>
                 <TextView
                     android:id="@+id/ball2Label"
                     android:layout_width="match_parent"
@@ -67,13 +73,15 @@
             </LinearLayout>
 
             <LinearLayout
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_weight="1">
                 <ToggleButton
                     android:id="@+id/ball3Toggle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/toggleButton"
-                    android:text="Ball 3" />
+                    android:textOff="Ball 3"
+                    android:textOn="Ball 3"/>
                 <TextView
                     android:id="@+id/ball3Label"
                     android:layout_width="match_parent"
