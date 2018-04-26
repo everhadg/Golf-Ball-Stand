@@ -134,7 +134,7 @@ public class GolfBallStandMain extends AccessoryActivity {
     public void populateBallMap(){
         mBallMap = new HashMap<>();
         for(int i=0; i<mBallColors.length; i++) {
-            String temp = mBallColors[i].getText().toString());
+            String temp = mBallColors[i].getText().toString();
             if (temp.equalsIgnoreCase("Blue")||temp.equalsIgnoreCase("Yellow")){
                mBallMap.put(Category.YELLOW_BLUE,i);
             } else if (temp.equalsIgnoreCase("Red")||temp.equalsIgnoreCase("Green")){
