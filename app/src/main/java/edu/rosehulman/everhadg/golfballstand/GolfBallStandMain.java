@@ -171,15 +171,19 @@ public class GolfBallStandMain extends AccessoryActivity {
     }
 
     public void goProgram(View view) {
-        populateBallMap();
-        dropBall(mBallMap.get(Category.YELLOW_BLUE)+1);
-        int wBIndex = mBallMap.get(Category.WHITE_BLACK);
-        if (mBallColors[wBIndex].getText().toString().equalsIgnoreCase("White")){
-            lazyToast("Drop off White Ball");
+        if(!mBallMap.isEmpty()) {
+            populateBallMap();
+            dropBall(mBallMap.get(Category.YELLOW_BLUE) + 1);
+            int wBIndex = mBallMap.get(Category.WHITE_BLACK);
+            if (mBallColors[wBIndex].getText().toString().equalsIgnoreCase("White")) {
+                lazyToast("Drop off White Ball");
+            } else {
+                lazyToast("Don't Drop off Black Ball");
+            }
+            dropBall(mBallMap.get(Category.RED_GREEN) + 1);
         } else {
-            lazyToast("Don't Drop off Black Ball");
+            lazyToast("Check Ball Colors");
         }
-        dropBall(mBallMap.get(Category.RED_GREEN)+1);
     }
 
     public void dropBall(int position){
