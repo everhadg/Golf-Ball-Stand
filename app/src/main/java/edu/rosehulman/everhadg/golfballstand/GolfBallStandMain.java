@@ -85,7 +85,8 @@ public class GolfBallStandMain extends AccessoryActivity {
         if (receivedCommand.contains("Location")) {
             String[] temp = receivedCommand.split(" ");
             int location = Integer.parseInt(temp[1]);
-            int ballnum = Integer.parseInt(temp[2]);
+            int ballnum= Integer.parseInt(temp[2]) - 1;
+
             String ball;
             switch (ballnum) {
                 case -1:
