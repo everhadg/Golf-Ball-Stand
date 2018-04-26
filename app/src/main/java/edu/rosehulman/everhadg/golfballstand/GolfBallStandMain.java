@@ -84,7 +84,6 @@ public class GolfBallStandMain extends AccessoryActivity {
         Toast.makeText(this, "Received " + receivedCommand, Toast.LENGTH_SHORT).show();
         if (receivedCommand.contains("Location")) {
             String[] temp = receivedCommand.split(" ");
-            Toast.makeText(this,temp[1],Toast.LENGTH_SHORT).show();
             int location = Integer.parseInt(temp[1]);
             int ballnum = Integer.parseInt(temp[2]);
             String ball;
@@ -114,7 +113,6 @@ public class GolfBallStandMain extends AccessoryActivity {
                     ball = "Error";
                     break;
             }
-            Toast.makeText(this,"Location " + location + " has " + ball,Toast.LENGTH_SHORT).show();
             setBallColorText(location,ball);
         }
     }
