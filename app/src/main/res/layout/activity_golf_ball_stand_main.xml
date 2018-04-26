@@ -139,6 +139,4 @@
         android:text="Update Selected Ball Color"
         android:onClick="updateColor"/>
 
-
-
 </RelativeLayout>
