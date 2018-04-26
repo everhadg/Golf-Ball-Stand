@@ -74,6 +74,7 @@ public class GolfBallStandMain extends AccessoryActivity {
             }
         });
         mBallMap = new HashMap<>();
+        mIsWhite = new Boolean[3];
         mBallColors = new TextView[3];
         mBallColors[0] = findViewById(R.id.ball1Label);
         mBallColors[1] = findViewById(R.id.ball2Label);
@@ -171,10 +172,22 @@ public class GolfBallStandMain extends AccessoryActivity {
 
     public void goProgram(View view) {
         populateBallMap();
-
+        dropBall(mBallMap.get(Category.YELLOW_BLUE));
+        int wBIndex = mBallMap.get(Category.WHITE_BLACK);
+        if (mBallColors[wBIndex].getText().toString().equalsIgnoreCase("White")){
+            lazyToast("Drop off White Ball");
+        } else {
+            lazyToast("Don't Drop off Black Ball");
+        }
+        dropBall(mBallMap.get(Category.RED_GREEN));
     }
 
-    public void lazyToast(View view, String message) {
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
+    public void dropBall(int position){
+        //TODO send command to arm to drop off ball at position
+        lazyToast("Drop Ball" + position);
+    }
+
+    public void lazyToast(String message) {
+        Toast.makeText(this,message,Toast.LENGTH_LONG).show();
     }
 }
