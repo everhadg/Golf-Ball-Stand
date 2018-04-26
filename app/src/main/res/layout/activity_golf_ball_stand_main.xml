@@ -149,6 +149,7 @@
         android:layout_centerHorizontal="true"
         android:background="@color/colorAccent"
         android:text="GO!"
+        android:onClick="goProgram"
         />
 
 </RelativeLayout>

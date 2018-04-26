@@ -9,12 +9,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.HashMap;
+
 import edu.rosehulman.me435.AccessoryActivity;
 
 public class GolfBallStandMain extends AccessoryActivity {
+    public enum Category{
+        RED_GREEN,YELLOW_BLUE,WHITE_BLACK,NONE
+    }
 
     private ToggleButton mToggle1,mToggle2,mToggle3;
-    private TextView mColor1,mColor2,mColor3,mCorrectionText,mColorSelectText;
+    private HashMap<Category, Integer> mBallMap;
+    private Boolean[] mIsWhite;
+    private TextView mColorSelectText;
+    private TextView[] mBallColors;
     private int mBallToChange,mColorIndex;
     private String[] mColorCorrection = {"None", "White","Black","Blue","Red","Green","Yellow"};
 
@@ -65,11 +73,11 @@ public class GolfBallStandMain extends AccessoryActivity {
                 }
             }
         });
-
-        mColor1 = findViewById(R.id.ball1Label);
-        mColor2 = findViewById(R.id.ball2Label);
-        mColor3 = findViewById(R.id.ball3Label);
-        mCorrectionText = findViewById(R.id.correctionLabel);
+        mBallMap = new HashMap<>();
+        mBallColors = new TextView[3];
+        mBallColors[0] = findViewById(R.id.ball1Label);
+        mBallColors[1] = findViewById(R.id.ball2Label);
+        mBallColors[2] = findViewById(R.id.ball3Label);
         mColorSelectText = findViewById(R.id.colorSelectLabel);
 
     }
@@ -86,7 +94,6 @@ public class GolfBallStandMain extends AccessoryActivity {
             String[] temp = receivedCommand.split(" ");
             int location = Integer.parseInt(temp[1]);
             int ballnum= Integer.parseInt(temp[2]) - 1;
-
             String ball;
             switch (ballnum) {
                 case -1:
@@ -115,22 +122,25 @@ public class GolfBallStandMain extends AccessoryActivity {
                     break;
             }
             setBallColorText(location,ball);
+            populateBallMap();
         }
     }
 
     public void setBallColorText(int location, String color){
-        switch(location) {
-            case 1:
-                mColor1.setText(color);
-                break;
-            case 2:
-                mColor2.setText(color);
-                break;
-            case 3:
-                mColor3.setText(color);
-            default:
-                Toast.makeText(this, "Location Error", Toast.LENGTH_LONG);
-                break;
+        mBallColors[location-1].setText(color);
+    }
+
+    public void populateBallMap(){
+        mBallMap = new HashMap<>();
+        for(int i=0; i<mBallColors.length; i++) {
+            String temp = mBallColors[i].getText().toString());
+            if (temp.equalsIgnoreCase("Blue")||temp.equalsIgnoreCase("Yellow")){
+               mBallMap.put(Category.YELLOW_BLUE,i);
+            } else if (temp.equalsIgnoreCase("Red")||temp.equalsIgnoreCase("Green")){
+                mBallMap.put(Category.RED_GREEN,i);
+            } else if (temp.equalsIgnoreCase("White")||temp.equalsIgnoreCase("Black")) {
+                mBallMap.put(Category.WHITE_BLACK, i);
+            }
         }
     }
 
@@ -156,5 +166,15 @@ public class GolfBallStandMain extends AccessoryActivity {
 
     public void updateColor(View view){
         setBallColorText(mBallToChange,mColorCorrection[mColorIndex]);
+        populateBallMap();
+    }
+
+    public void goProgram(View view) {
+        populateBallMap();
+
+    }
+
+    public void lazyToast(View view, String message) {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }
