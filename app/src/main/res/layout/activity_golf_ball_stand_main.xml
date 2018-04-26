@@ -124,7 +124,9 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:textSize="17dp"
-            android:layout_gravity="center"
+            android:paddingTop="11dp"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
             android:text="Color"/>
         <Button
             android:layout_width="wrap_content"
@@ -133,10 +135,21 @@
             android:onClick="shiftColorRight"/>
     </LinearLayout>
     <Button
+        android:id="@+id/updateButton"
         android:layout_below="@+id/correctionLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Update Selected Ball Color"
+        android:layout_centerHorizontal="true"
         android:onClick="updateColor"/>
+    <Button
+        android:id="@+id/goButton"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:background="@color/colorAccent"
+        android:text="GO!"
+        />
 
 </RelativeLayout>
