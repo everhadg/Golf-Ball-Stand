@@ -23,10 +23,10 @@ public class GolfBallStandMain extends AccessoryActivity {
     @Override
     protected void onCommandReceived(String receivedCommand) {
         super.onCommandReceived(receivedCommand);
-        Toast.makeText(this, "Received " + receivedCommand, Toast.LENGTH_SHORT);
+        Toast.makeText(this, "Received " + receivedCommand, Toast.LENGTH_SHORT).show();
         if (receivedCommand.contains("Location")) {
-            String[] temp = receivedCommand.split(":");
-            Toast.makeText(this,temp[1],Toast.LENGTH_SHORT);
+            String[] temp = receivedCommand.split(" ");
+            Toast.makeText(this,temp[1],Toast.LENGTH_SHORT).show();
             int location = Integer.parseInt(temp[1]);
             int ballnum = Integer.parseInt(temp[2]);
             String ball;
@@ -57,7 +57,7 @@ public class GolfBallStandMain extends AccessoryActivity {
                     break;
             }
             //TODO Change the Textview in response to the return ball color
-            Toast.makeText(this,"Location " + location + " has " + ball,Toast.LENGTH_SHORT);
+            Toast.makeText(this,"Location " + location + " has " + ball,Toast.LENGTH_SHORT).show();
         }
     }
 }
