@@ -117,7 +117,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="<--"
+            android:text="ShiftLeft"
             android:onClick="shiftColorLeft"/>
         <TextView
             android:id="@+id/colorSelectLabel"
@@ -129,7 +129,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="-->"
+            android:text="ShiftRight"
             android:onClick="shiftColorRight"/>
     </LinearLayout>
     <Button
