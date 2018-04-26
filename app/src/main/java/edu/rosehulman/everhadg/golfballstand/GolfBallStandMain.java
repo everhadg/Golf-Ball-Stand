@@ -38,7 +38,7 @@ public class GolfBallStandMain extends AccessoryActivity {
                 if (isChecked){
                     // Toggle is enabled
                     mToggle2.setChecked(false);
-                    mToggle2.setChecked(false);
+                    mToggle3.setChecked(false);
                     setBallToChange(1);
                 } else {
                     // Toggle is disabled
@@ -172,14 +172,14 @@ public class GolfBallStandMain extends AccessoryActivity {
 
     public void goProgram(View view) {
         populateBallMap();
-        dropBall(mBallMap.get(Category.YELLOW_BLUE));
+        dropBall(mBallMap.get(Category.YELLOW_BLUE)+1);
         int wBIndex = mBallMap.get(Category.WHITE_BLACK);
         if (mBallColors[wBIndex].getText().toString().equalsIgnoreCase("White")){
             lazyToast("Drop off White Ball");
         } else {
             lazyToast("Don't Drop off Black Ball");
         }
-        dropBall(mBallMap.get(Category.RED_GREEN));
+        dropBall(mBallMap.get(Category.RED_GREEN)+1);
     }
 
     public void dropBall(int position){
@@ -189,5 +189,16 @@ public class GolfBallStandMain extends AccessoryActivity {
 
     public void lazyToast(String message) {
         Toast.makeText(this,message,Toast.LENGTH_LONG).show();
+    }
+
+    public void clear(View view){
+        mBallMap = new HashMap<>();
+        mToggle1.setChecked(false);
+        mToggle2.setChecked(false);
+        mToggle3.setChecked(false);
+        for(int i=0; i<mBallColors.length; i++){
+            mBallColors[i].setText("---");
+        }
+        mColorSelectText.setText("Color");
     }
 }
