@@ -45,7 +45,6 @@
                     android:textOff="Ball 1"
                     android:textOn="Ball 1"
                     android:layout_gravity="center_horizontal"
-                    android:onClick="toggleBall1"
                     />
                 <TextView
                     android:id="@+id/ball1Label"
@@ -67,7 +66,7 @@
                     android:layout_gravity="center_horizontal"
                     android:textOff="Ball 2"
                     android:textOn="Ball 2"
-                    android:onClick="toggleBall2"/>
+                    />
                 <TextView
                     android:id="@+id/ball2Label"
                     android:layout_width="wrap_content"
@@ -88,7 +87,7 @@
                     android:layout_gravity="center_horizontal"
                     android:textOff="Ball 3"
                     android:textOn="Ball 3"
-                    android:onClick="toggleBall3"/>
+                    />
                 <TextView
                     android:id="@+id/ball3Label"
                     android:layout_width="wrap_content"

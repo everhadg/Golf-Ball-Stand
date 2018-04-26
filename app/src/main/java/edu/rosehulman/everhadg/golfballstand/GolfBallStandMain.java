@@ -138,15 +138,6 @@ public class GolfBallStandMain extends AccessoryActivity {
         mBallToChange = location;
     }
 
-    public void toggleBall1(View view) {
-    }
-
-    public void toggleBall2(View view) {
-    }
-
-    public void toggleBall3(View view) {
-    }
-
     public void shiftColorLeft(View view){
         mColorIndex--;
         if(mColorIndex<0){
