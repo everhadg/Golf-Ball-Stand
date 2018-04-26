@@ -41,14 +41,18 @@
                 <ToggleButton
                     android:id="@+id/ball1Toggle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:textOff="Ball 1"
-                    android:textOn="Ball 1"/>
+                    android:textOn="Ball 1"
+                    android:layout_gravity="center_horizontal"
+                    android:onClick="toggleBall1"
+                    />
                 <TextView
                     android:id="@+id/ball1Label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_weight="1"
+                    android:layout_gravity="center_horizontal"
                     android:text="---" />
             </LinearLayout>
 
@@ -60,13 +64,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignTop="@+id/toggleButton"
-                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="center_horizontal"
                     android:textOff="Ball 2"
-                    android:textOn="Ball 2"/>
+                    android:textOn="Ball 2"
+                    android:onClick="toggleBall2"/>
                 <TextView
                     android:id="@+id/ball2Label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
                     android:layout_weight="1"
                     android:text="---" />
@@ -78,15 +83,17 @@
                 <ToggleButton
                     android:id="@+id/ball3Toggle"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_alignTop="@+id/toggleButton"
+                    android:layout_gravity="center_horizontal"
                     android:textOff="Ball 3"
-                    android:textOn="Ball 3"/>
+                    android:textOn="Ball 3"
+                    android:onClick="toggleBall3"/>
                 <TextView
                     android:id="@+id/ball3Label"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="end"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center_horizontal"
                     android:layout_weight="0"
                     android:text="---" />
             </LinearLayout>
