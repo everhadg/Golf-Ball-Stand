@@ -103,10 +103,41 @@
     <TextView
         android:id="@+id/correctionLabel"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:text="Correction"
+        android:text="Correction:"
+        android:textSize="20dp"
         android:layout_below="@+id/displayTable" />
+    <LinearLayout
+        android:id="@+id/correctionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/correctionLabel">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="<--"
+            android:onClick="shiftColorLeft"/>
+        <TextView
+            android:id="@+id/colorSelectLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textSize="17dp"
+            android:layout_gravity="center"
+            android:text="Color"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="-->"
+            android:onClick="shiftColorRight"/>
+    </LinearLayout>
+    <Button
+        android:layout_below="@+id/correctionLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update Selected Ball Color"
+        android:onClick="updateColor"/>
 
 
 

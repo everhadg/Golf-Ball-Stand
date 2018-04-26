@@ -14,8 +14,9 @@ import edu.rosehulman.me435.AccessoryActivity;
 public class GolfBallStandMain extends AccessoryActivity {
 
     private ToggleButton mToggle1,mToggle2,mToggle3;
-    private TextView mColor1,mColor2,mColor3;
-    private int mBallToChange;
+    private TextView mColor1,mColor2,mColor3,mCorrectionText,mColorSelectText;
+    private int mBallToChange,mColorIndex;
+    private String[] mColorCorrection = {"None", "White","Black","Blue","Red","Green","Yellow"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +69,8 @@ public class GolfBallStandMain extends AccessoryActivity {
         mColor1 = findViewById(R.id.ball1Label);
         mColor2 = findViewById(R.id.ball2Label);
         mColor3 = findViewById(R.id.ball3Label);
+        mCorrectionText = findViewById(R.id.correctionLabel);
+        mColorSelectText = findViewById(R.id.colorSelectLabel);
 
     }
 
@@ -143,5 +146,25 @@ public class GolfBallStandMain extends AccessoryActivity {
     }
 
     public void toggleBall3(View view) {
+    }
+
+    public void shiftColorLeft(View view){
+        mColorIndex--;
+        if(mColorIndex<0){
+            mColorIndex = 6;
+        }
+        mColorSelectText.setText(mColorCorrection[mColorIndex]);
+    }
+
+    public void shiftColorRight(View view){
+        mColorIndex++;
+        if(mColorIndex>6){
+            mColorIndex = 0;
+        }
+        mColorSelectText.setText(mColorCorrection[mColorIndex]);
+    }
+
+    public void updateColor(View view){
+        setBallColorText(mBallToChange,mColorCorrection[mColorIndex]);
     }
 }
